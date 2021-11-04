@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Lessons App</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="lesson-info">
+            <h3 v-text='product.Subject'></h3>
+            <h3 v-text='product.Location'></h3>
+            <h3 v-text='product.Price'></h3>
+            <h3>Spaces: {{product.Spaces}}</h3>
+        </div>
+        <div id="space">
+            <figure>
+                <img v-bind:src='product.Image'>
+            </figure>
+        </div>
+    </div>
+    <script>
+        var webstore = new Vue({
+        el: '#app',
+        data:{
+            sitename: 'Vue.js Pet Depot',
+            product:{
+                Subject: "Lesson: Science",
+                Location: "Location: Victoria",
+                Price: "Price: £230",
+                Spaces: 15,
+                Image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgxMHvJC2T-1pMpfDFH7Ougsg8Z5WFbUzn7Q&usqp=CAU"
+            }
+        }
+    });
+    </script>
+</body>
+</html>
+
+
+
+
