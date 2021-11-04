@@ -21,7 +21,7 @@
             </figure>
         </div>
         <div id="btn">
-            <button v-on:click="changeSpace">Add To Basket</button>
+            <button v-on:click="changeSpace" v-show="Allow">Add To Basket</button>
         </div>
     </div>
     <script>
@@ -45,7 +45,12 @@
                         document.getElementById("btn").style.cursor = "not-allowed";
                     }
                 }
-            }
+        },
+        computed: {
+                Allow() {
+                    return this.product.Spaces > 0
+                }
+        }
     });
     </script>
 </body>
