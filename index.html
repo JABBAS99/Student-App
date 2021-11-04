@@ -20,6 +20,9 @@
                 <img v-bind:src='product.Image'>
             </figure>
         </div>
+        <div id="btn">
+            <button v-on:click="changeSpace">Add To Basket</button>
+        </div>
     </div>
     <script>
         var webstore = new Vue({
@@ -33,7 +36,16 @@
                 Spaces: 15,
                 Image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgxMHvJC2T-1pMpfDFH7Ougsg8Z5WFbUzn7Q&usqp=CAU"
             }
-        }
+        },
+        methods:{
+                changeSpace: function(){
+                    if(this.product.Spaces > 0){
+                        this.product.Spaces -= 1;
+                    } else{
+                        document.getElementById("btn").style.cursor = "not-allowed";
+                    }
+                }
+            }
     });
     </script>
 </body>
